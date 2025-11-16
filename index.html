@@ -85,17 +85,21 @@
     </div>
 
     <script>
-        // Redirect to homepage after 2 seconds
-        setTimeout(function() {
-            window.location.href = 'pages/landing_page.html';
-        }, 2000);
-        
-        // Preload the target page for faster navigation
-        const link = document.createElement('link');
-        link.rel = 'prefetch';
-        link.href = 'pages/landing_page.html';
-        document.head.appendChild(link);
-    </script>
+    // Ensure redirect always goes to landing_page.html
+    const target = '/pages/landing_page.html';
+
+    // Auto redirect
+    setTimeout(() => {
+        window.location.assign(target);
+    }, 1500);
+
+    // Prefetch for faster load
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = target;
+    document.head.appendChild(link);
+</script>
+
 <script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
 </body>
 </html>
