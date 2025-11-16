@@ -85,20 +85,18 @@
     </div>
 
     <script>
-    // Ensure redirect always goes to landing_page.html
-    const target = '/pages/landing_page.html';
-
-    // Auto redirect
+    // Correct relative redirect (works on raw HTML + Rocket hosting)
     setTimeout(() => {
-        window.location.assign(target);
+        window.location.href = './pages/landing_page.html';
     }, 1500);
 
-    // Prefetch for faster load
+    // Prefetch
     const link = document.createElement('link');
     link.rel = 'prefetch';
-    link.href = target;
+    link.href = './pages/landing_page.html';
     document.head.appendChild(link);
 </script>
+
 
 <script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
 </body>
