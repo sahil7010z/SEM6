@@ -500,7 +500,7 @@
 
   // sample products (30)
   const allProducts = (function(){
-    const make = (id,name,category,price,tags,brand,images,unit) => ({id,name,category,price, tags, brand, image, unit});
+    const make = (id,name,category,price,tags,brand,unit) => ({id,name,category,price, tags, brand, image:` https://via.placeholder.com/600x420?text=${encodeURIComponent(name)}`, unit});
     const arr=[];
     arr.push(make(1,'Organic Vine Tomatoes','veg',99,['organic','fresh'],'FarmFresh','https://i.postimg.cc/Dzh7TgGm/3183-50361-m.jpg','per kg'));
     arr.push(make(2,'Mixed Leafy Greens','veg',79,['fresh','local'],'GreenHarvest','per kg'));
